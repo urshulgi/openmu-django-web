@@ -160,3 +160,4 @@ cython_debug/
 .idea/
 
 openmu_web/.openmu_pgpass
+openmu_web/.openmu_web_pgpass

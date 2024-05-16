@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | {{ PROJECT_NAME }}</title>
+    {# Bulma docs: https://bulma.io/documentation/start/overview/ #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+  </head>
+
+  {% block header %}{% endblock %}
+  {% block body %}{% endblock %}
+</html>

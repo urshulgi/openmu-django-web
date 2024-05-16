@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+    <script src="{% static 'core/js/navbar.js' %}"></script>
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+    <a class="navbar-item"><strong>{{ PROJECT_NAME }}</strong></a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            {% for button_name, url in MENU.items %}
+            <a href="{{ url }}" class="navbar-item">
+                {{ button_name }}
+            </a>
+            {% endfor %}
+
+        <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+        Test
+        </a>
+
+        <div class="navbar-dropdown">
+        <a class="navbar-item">
+        Test
+        </a>
+        <a class="navbar-item">
+        Test
+        </a>
+        <hr class="navbar-divider">
+        <a class="navbar-item">
+        Test
+        </a>
+        </div>
+        </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    {% if account %}
+                        <a href="/user/account" class="button is-primary">
+                            <strong>My account</strong>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="button is-primary">
+                            <strong>Login</strong>
+                        </a>
+                    {% endif %}
+                    <a href="#" class="button is-light">Forum</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% endblock %}

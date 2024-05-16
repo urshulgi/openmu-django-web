@@ -1,0 +1,4 @@
+psycopg2-binary == 2.9.9
+Django == 5.0.6
+pre-commit == 3.7.1
+bcrypt == 4.1.3

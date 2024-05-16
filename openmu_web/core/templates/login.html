@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+
+{% block body %}
+<section class="hero is-fullheight is-light">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-6 is-offset-3">
+        <h3 class="title has-text-grey">Login</h3>
+
+        <div class="box">
+          <form action="{{ request.path }}" method="post">
+              {% csrf_token %}
+              {{ form }}
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                <input type="checkbox"> Remember Me
+              </label>
+              </div>
+            </div>
+
+            <p class="field">
+                <input class="button is-block is-primary is-large is-fullwidth" type="submit" value="Login">
+            </p>
+
+            <p class="field">
+              <a href="#" class="button is-block is-fullwidth">Register</a>
+            </p>
+          </form>
+        </div>
+        <!-- end .box -->
+          <a class="hero is-light has-text-grey" href="#">Forgot Password</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
